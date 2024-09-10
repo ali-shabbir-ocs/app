@@ -1,0 +1,48 @@
+.container {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to left,
+    rgb(73, 103, 184) 0%,
+    rgb(125, 125, 164) 100%
+  );
+
+  .row {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 100px;
+
+    .search-container input {
+      height: 30px;
+      border-radius: 20px;
+      padding: 20px;
+      border: 1px solid white;
+      margin-bottom: 10px;
+    }
+
+    .checkboxes {
+      color: aliceblue;
+      font-weight: 500;
+    }
+    .table {
+      margin: 50px;
+      width: 70%;
+    }
+    .table table,
+    th,
+    td {
+      border: 2px solid white;
+      border-collapse: collapse;
+      text-align: center;
+      height: 30px;
+      color: white;
+    }
+
+    table {
+      width: 100%;
+    }
+  }
+}
