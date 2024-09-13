@@ -35,12 +35,22 @@ const Home = () => {
             if (searchFieldString && !searchChecks.some(item => item.name === searchFieldString)) {
                 setSearchChecks(prev => [
                     ...prev,
-                    { name: searchFieldString, checked: false }
+                    { name: searchFieldString, checked: true }
                 ]);
             }
         }, 2000);
     };
+    const display = (name) => {
 
+        if (check) {
+            const newFiltered = users.filter((user) =>
+                user.name.toLowerCase().includes(name))
+            setFiltered(newFiltered);
+        } else {
+            setFiltered(users);
+        }
+        setCheck(!check);
+    }
     const displayNone = () => {
         if (check) {
             setFiltered([]);
@@ -91,6 +101,7 @@ const Home = () => {
                                     checked={searchCheck.checked}
                                     name={searchCheck.name}
                                     onChange={() => handleCheckboxChange(searchCheck.name)}
+                                    onClick={() => display(searchCheck.name)}
                                 />
                                 <label>{searchCheck.name}</label>
                             </Fragment>
